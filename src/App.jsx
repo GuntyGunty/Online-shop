@@ -1,5 +1,13 @@
 import React from 'react';
 
+import Container from './Components/Container/Container';
+import Header from './Components/Header/Header';
+import Sidebar from './Components/Sidebar/Sidebar';
+import Main from './Components/Main/Main';
+import Logo from './Components/Logo/Logo';
+import Card from './Components/Card/Card';
+import Filter from './Components/Filter/Filter';
+
 export default class App extends React.Component {
 	
 	onFormSubmit = (e) => {
@@ -32,7 +40,7 @@ export default class App extends React.Component {
 	render() {
 		return (
 			<div className="App">
-				<form onSubmit={this.onFormSubmit}>
+				{/* <form onSubmit={this.onFormSubmit}>
 					<label>
 						Email
 					<input name="email" type="email" />
@@ -42,7 +50,27 @@ export default class App extends React.Component {
 					<input name="password" type="password" />
 					</label>
 					<input type="submit" />
-				</form>
+				</form> */}
+				<Container>
+					<Header>
+						<Logo></Logo>
+					</Header>
+				</Container>
+				<Container variant="flex">
+					<Sidebar>
+
+					</Sidebar>
+					<Main>
+						<Filter>
+			
+						</Filter>
+						<Container variant="inner flex">
+							<Card></Card>
+							<Card></Card>
+							<Card></Card>
+						</Container>
+					</Main>
+				</Container>
 			</div>
 		);
 	}

@@ -1,0 +1,22 @@
+.Card {
+  flex-basis: 30.5%;
+  border: 1px solid #ededed;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 0 15px 30px 15px;
+}
+
+.Card:last-child {
+  margin-right: 0;
+}
+
+.Card-top {
+  background-color: #666666;
+  height: 214px;
+}
+
+.Card-bottom {
+  height: 100px;
+  padding: 0 20px;
+}
