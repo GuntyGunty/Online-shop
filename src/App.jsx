@@ -1,4 +1,5 @@
 import React from 'react';
+import APISerice from './Utils/APIService';
 
 import Container from './Components/Container/Container';
 import Header from './Components/Header/Header';
@@ -34,6 +35,18 @@ export default class App extends React.Component {
 					localStorage.setItem('user', data.user);
 				}
 			});
+		});
+	}
+
+	componentDidMount() {
+		APISerice.post({
+			url: 'user/login',
+			body: {
+				email: 'mr.glavanar@bk.ru',
+				password: '12456',
+			},
+		}).then((data) => {
+			console.log(data);
 		});
 	}
 
