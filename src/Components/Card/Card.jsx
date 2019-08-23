@@ -8,14 +8,17 @@ const Card = ({
 }) => {
   return (
     <div className="Card">
-      <a href={cardLink} className="Card-link">
-        <div className="Card-top">
-          <img className="Card-img" src={imgPath} />
-        </div>
-        <div className="Card-bottom"></div>
-      </a>
+      <div className="Card-top">
+        <img className="Card-img" src={imgPath} alt="" />
+      </div>
+      <div className="Card-bottom">Hello</div>
+      <a href={cardLink} className="Card-link">Product title</a>
     </div>
   )
+};
+
+Card.defaultProps = {
+  cardLink: '/',
 };
 
 export default Card;
