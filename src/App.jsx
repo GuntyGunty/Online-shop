@@ -3,6 +3,7 @@ import { Switch, Route, Link } from 'react-router-dom';
 import APISerice from './Utils/APIService';
 
 import Header from './Components/Header/Header';
+import Cart from './Components/Cart/Cart';
 import Sidebar from './Components/Sidebar/Sidebar';
 import Main from './Components/Main/Main';
 import Logo from './Components/Logo/Logo';
@@ -21,6 +22,7 @@ export default class App extends React.Component {
 					<Link to="/catalogue">Catalogue</Link>
 					<Link to="/">Home</Link>
 				</Header>
+				<Cart />
 				<Route path="/" component={() => { window.scrollTo(0, 0); return (<></>); }} />
 				<Switch>
 					<Route exact path="/" component={HomePage} />
