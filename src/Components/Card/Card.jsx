@@ -5,13 +5,14 @@ const Card = ({
   children,
   cardLink,
   imgPath,
+  title,
 }) => {
   return (
     <div className="Card">
       <div className="Card-top">
         <img className="Card-img" src={imgPath} alt="" />
       </div>
-      <div className="Card-bottom">Hello</div>
+      <div className="Card-bottom">{title}</div>
       <a href={cardLink} className="Card-link">Product title</a>
     </div>
   )

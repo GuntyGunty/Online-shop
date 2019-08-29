@@ -1,5 +1,5 @@
 class APIService {
-  origin = 'https://edu-online-shop.herokuapp.com/api/v1/';
+  origin = 'https://edu-online-shop.herokuapp.com/api/v1';
 
   post(params) {
     const {
