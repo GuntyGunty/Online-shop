@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
 import APISerice from './Utils/APIService';
 
@@ -16,12 +16,24 @@ import ProductPage from './Pages/Product/ProductPage';
 import LoginForm from './Components/LoginForm';
 import RegisterForm from './Components/RegisterForm';
 
+const Title = (props) => {
+	const [isOpened, setIsOpened] = useState(false);
+	const { title } = props;
+
+	const renderedTitle = typeof title === 'function' ? title(isOpened, setIsOpened) : title;
+
+	return (
+		<div className="Title">{renderedTitle}</div>
+	);
+}
+
 export default class App extends React.Component {
 
 	render() {
 		return (
 			<div className="App">
 				<Header>
+					<Title title={(isOpened, setIsOpened) => <div onClick={() => setIsOpened(!isOpened)} >hello {`${isOpened}`}</div>} />
 					<Link to="/catalogue">Catalogue</Link>
 					<Link to="/">Home</Link>
 				</Header>
